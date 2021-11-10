@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id: 26102021185701
+      author: gkhatri
+      context: prod, pta, qa, dev, local
+      changes:
+        - createIndex:
+            catalogName: cat
+            clustered: false
+            columns:
+              - column:
+                  name: EMAIL
+                  descending: true
+            indexName: IDX_CUST_EMAIL
+            schemaName: public
+            tableName: CUSTOMER
+            tablespace: A String
+            unique: false
+
+        - createIndex:
+            catalogName: cat
+            clustered: false
+            columns:
+              - column:
+                  name: NAME
+                  descending: true
+            indexName: IDX_CUST_NAME
+            schemaName: public
+            tableName: CUSTOMER
+            tablespace: A String
+            unique: false
+
+      rollback:
+        - dropIndex:
+            catalogName: cat
+            indexName: IDX_CUST_EMAIL
+            schemaName: public
+            tableName: CUSTOMER
+
+        - dropIndex:
+            catalogName: cat
+            indexName: IDX_CUST_NAME
+            schemaName: public
+            tableName: CUSTOMER

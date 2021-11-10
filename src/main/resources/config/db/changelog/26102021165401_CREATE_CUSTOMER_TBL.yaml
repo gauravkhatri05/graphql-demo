@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 26102021165401
+      author: gkhatri
+      context: prod, pta, qa, dev, local
+      changes:
+        - createTable:
+            tableName: CUSTOMER
+            columns:
+              - column:
+                  name: ID
+                  type: UUID
+                  defaultValue: UUID()
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: PK_CUST_TBL
+                    nullable: false
+              - column:
+                  name: EMAIL
+                  type: VARCHAR(255)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: NAME
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+
+      rollback:
+        - dropTable:
+            tableName: CUSTOMER

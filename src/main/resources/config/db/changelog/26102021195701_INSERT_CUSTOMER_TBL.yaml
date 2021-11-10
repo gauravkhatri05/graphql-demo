@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: 26102021165401
+      author: gkhatri
+      context: prod, pta, qa, dev, local
+      changes:
+        - sqlFile:
+            dbms: h2, oracle
+            encoding: utf8
+            endDelimiter: \nGO
+            path: ./data.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            stripComments: true

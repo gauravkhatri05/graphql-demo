@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: config\db\changelog\26102021165401_CREATE_CUSTOMER_TBL.yaml
+
+  - include:
+      file: config\db\changelog\26102021185701_CREATE_INDX_CUSTOMER_TBL.yaml
+
+  - include:
+      file: config\db\changelog\26102021195701_INSERT_CUSTOMER_TBL.yaml

@@ -1,0 +1,36 @@
+type Mutation {
+    addCustomer(customerReq: CustomerReq): Customer!
+}
+
+input CustomerReq {
+    name: String!
+    email: String!
+}
+
+type Query {
+    customers(filter: CustomerCriteria): [Customer]!
+}
+
+input CustomerCriteria {
+    name: String!
+}
+
+type Customer {
+    id: ID
+    name: String! @deprecated(reason: "Instead use fullName")
+    fullName: String!
+    email: String!
+    orders: [Order]
+}
+
+type Order {
+    id: ID
+    customerId: ID
+    totalQuantity: Int!
+    total: Float!
+    status: OrderStatus!
+}
+
+enum OrderStatus {
+    SUCCESS, FAILED
+}

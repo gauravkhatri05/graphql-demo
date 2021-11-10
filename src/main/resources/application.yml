@@ -1,0 +1,48 @@
+server:
+  port: 8080
+
+spring:
+
+  application:
+    name: graphql-demo
+
+  graphql:
+    schema:
+      locations: classpath:config/graphql/
+      printer:
+        enabled: true
+
+    graphiql:
+      enabled: true
+      path: /graphiql
+
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+#    password: root
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        format_sql: true
+
+  liquibase:
+    contexts: prod, pta, qa, dev, local
+    enabled: true
+    change-log: classpath:config/db/db.changelog-master.yaml
+
+logging:
+  level:
+    org.springframework.web: INFO
+    liquibase: INFO # or TRACE
+    com.zaxxer.hikari: INFO
+    org.hibernate.SQL: INFO # or DEBUG
+    org.hibernate.type: TRACE # or don't provide
+    hibernate.type.descriptor.sql.BasicBinder: TRACE # or don't provide

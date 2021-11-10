@@ -1,0 +1,10 @@
+INSERT INTO CUSTOMER(EMAIL, NAME) VALUES('josh@graphql.com', 'Josh');
+INSERT INTO CUSTOMER(EMAIL, NAME) VALUES('stephane@graphql.com', 'Stephane');
+INSERT INTO CUSTOMER(EMAIL, NAME) VALUES('dr.syer@graphql.com', 'Dr Syer');
+INSERT INTO CUSTOMER(EMAIL, NAME) VALUES('madhura@graphql.com', 'Madhura');
+INSERT INTO CUSTOMER(EMAIL, NAME) VALUES('yuxin@graphql.com', 'Yuxin');
+INSERT INTO CUSTOMER(EMAIL, NAME) VALUES('phil@graphql.com', 'Phil');
+INSERT INTO CUSTOMER(EMAIL, NAME) VALUES('jurgen@graphql.com', 'Jurgen');
+INSERT INTO CUSTOMER(EMAIL, NAME) VALUES('mark@graphql.com', 'Mark');
+INSERT INTO CUSTOMER(EMAIL, NAME) VALUES('john.wright@graphql.com', 'John Wright');
+INSERT INTO CUSTOMER(EMAIL, NAME) VALUES('john.snow@graphql.com', 'John Snow');
